@@ -16,10 +16,10 @@ CFLAGS += -D__LIBCPE464_
 all:  functions udpClient udpServer 
 
 udpClient: rcopy.c $(OBJS) 
-	$(CC) $(CFLAGS) -o rcopy rcopy.c PDU.c PDU.h packets.h functions.h functions.c checksum.h checksum.c window.c window.h $(OBJS) $(LIBS)
+	$(CC) $(CFLAGS) -o rcopy rcopy2.c PDU.c PDU.h packets.h functions.h functions.c checksum.h checksum.c window2.c window.h $(OBJS) $(LIBS)
 
 udpServer: server.c $(OBJS) 
-	$(CC) $(CFLAGS) -o server server.c PDU.c PDU.h FIFO.c FIFO.h packets.h functions.h functions.c checksum.h checksum.c $(OBJS) $(LIBS)
+	$(CC) $(CFLAGS) -o server server2.c PDU.c PDU.h FIFO.c FIFO.h packets.h functions.h functions.c checksum.h checksum.c $(OBJS) $(LIBS)
 
 functions: functions.c 
 	$(CC) $(CFLAGS) -c functions.c
